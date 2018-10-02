@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <h1>TooDoo.com</h1>
+            <h2>A simple app to organise your life</h2>
+            <hr>
+        </header>
+        <h3>Recently added</h3>
+        <ul>
+            {% for todo in todos %}
+              <li><a href="/todos/details/{{todo.id}}">{{todo.title}}</a>: {{todo.text}}</li>
+            {% endfor %}
+          </ul>
+          <br>
+            <a href="/todos/add">Create new Toodoo</a>
+    </body>
+</html>
+
+
